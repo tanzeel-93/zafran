@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #f0f0f0; */
+            background-image: url(https://img.freepik.com/free-photo/restaurant-interior_1127-3394.jpg?w=740&t=st=1713280702~exp=1713281302~hmac=e64e7397d5fc82937a2cc37b164aca612e652d8bbd2f0c71377c84db54d9f24a);
+            background-size: cover;
+            color: #ffffff;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #00000070;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button[type="submit"] {
+            background-color: #e81922;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+            transition: all ease 0.7s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #580408;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4" required></textarea>
+
+            <button type="submit" id="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    
+    const formData = new FormData(this);
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const message = formData.get('message');
+
+    const formDataObject = {
+        name: name,
+        email: email,
+        message: message
+    };
+
+    localStorage.setItem('formData', JSON.stringify(formDataObject));
+
+    alert('Form data saved successfully!');
+    window.location.href="index.html"
+    this.reset();
+});
+
+
+
+
+</script>
+
+</body>
+
+</html>
