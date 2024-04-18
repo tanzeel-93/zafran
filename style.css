@@ -24,6 +24,10 @@
     --primary-font: 'Ubuntu', sans-serif;
     --secondary-font: 'Open Sans', sans-serif;
 }
+.fa, .fas {
+    font-weight: 900;
+    COLOR: aliceblue;
+}
 
 body {
     font-family: var(--secondary-font);
@@ -451,11 +455,15 @@ p {
     .carousel-caption {
         bottom: 0;
     }
-
+    .header_wrapper .nav-item .nav-link {
+        margin-top: 15px;
+        color: black !important;
+    }
     .review_wrapper .carousel-item {
         min-height: 460px;
     }
 }
+
 
         
       
